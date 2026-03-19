@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int num = input.nextInt();
+        int a[] = new int[num];
+
+        for(int i=0;i<num;i++){
+            a[i] = input.nextInt();
+        }
+
+        int min = a[0];
+        int max = a[0];
+
+        for(int i = 0; i < num; i++) {
+            if(a[i] < min){
+                min = a[i];
+            }
+            if(a[i] > max){
+                max = a[i];
+            }
+        }
+
+        System.out.println(min*max);
+    }
+}
+// 첫번째 입력 약수의 갯수
+// 두번째 입력 진짜 약수
+// 입력되는 약수의 최소 값과 최댓 값을 곱하면 원하는 값을 찾을 수 있다.
