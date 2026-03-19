@@ -1,0 +1,27 @@
+
+import java.util.Scanner;
+
+// 모음의 갯수
+public class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        while(true){
+            int count=0;
+            String s = input.nextLine();
+            if(s.equals("#")) {
+                break;
+            }
+            for(char c : s.toCharArray()){
+                if("aeiouAEIOU".indexOf(c) != -1){
+                    count++;
+                }
+            }
+
+            System.out.println(count);
+        }
+    }
+}
+
+// 입력으로는 문장, 입력의 끝에는 #이 입력된다.
+// 입력된 문장을 char 배열에 각각 넣은 후 indexOf로 검사하여 모음이 아니라면 -1값이 나오는 것을 활용하여 
+// 각 문장의 모음 갯수를 세어 출력
