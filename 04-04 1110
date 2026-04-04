@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int n = input.nextInt();
+        if (n < 10) {
+            n *= 10;
+        }
+        int sum, n1 , count = 0;
+        n1 = n;
+        while (true) {
+
+            sum = (n / 10) + (n % 10);  //8
+            n =  (n % 10) * 10 + sum % 10;
+            count ++;
+            if (n == n1) {break;}
+        }
+
+        System.out.println(count);
+
+    }
+}
