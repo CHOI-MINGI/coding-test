@@ -44,27 +44,11 @@ class Solution
             int black = Integer.parseInt(st.nextToken());
             int white = Integer.parseInt(st.nextToken());
             int X = Integer.parseInt(st.nextToken()); int Y = Integer.parseInt(st.nextToken()); int Z = Integer.parseInt(st.nextToken());
-            int Max = 0;
-            int result = 0;
-            if(black == white) {
-                int case1 = X*black + Y*white;
-                int case2 = (black+white)*Z;
-                result = Math.max(case1, case2);
-            }
-            else {
-            	if( black > white){
-                    int case1 = X*black + Y*white;
-                    int case2 = Z*white*2 + (black-white)*X;
-                    result = Math.max(case1, case2);
-                }
-                else {
-                    int case1 = X*black + Y*white;
-                    int case2 = Z*black*2 + (white-black)*Y;
-                    result = Math.max(case1, case2);
-                }
-                
-            } 
-            System.out.println(result);
+            int min = Math.min(black,white);
+            
+            int case1 = black*X + white*Y;
+            int case2 = (black-min)*X + (white-min)*Y +min*Z*2;
+            System.out.println(Math.max(case1,case2));
 		}
 	}
 }
